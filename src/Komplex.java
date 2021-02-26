@@ -13,5 +13,9 @@ public class Komplex {
     }
 
     public Komplex add(Komplex b) {
+        real = this.real + b.real;
+        imaginar= this.imaginar + b.imaginar;
+
+        return new Komplex(real, imaginar);
     }
 }
