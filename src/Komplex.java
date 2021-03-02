@@ -15,10 +15,10 @@ public class Komplex {
     }
 
     public Komplex add(Komplex b) {
-        real = this.real + b.real;
-        imaginar= this.imaginar + b.imaginar;
+        double realTemp = this.real + b.real;
+        double imaginarTemp = this.imaginar + b.imaginar;
 
-        return new Komplex(real, imaginar);
+        return new Komplex(realTemp, imaginarTemp);
     }
 
     @Override
@@ -36,11 +36,10 @@ public class Komplex {
     }
 
     public Komplex multiply(Komplex b) {
-        double realTemp = this.real;
-        real = (this.real * b.real) - (this.imaginar * b.imaginar);
-        imaginar = (this.imaginar * b.real) + (realTemp * b.imaginar);
+        double realTemp = (this.real * b.real) - (this.imaginar * b.imaginar);
+        double imaginarTemp = (this.imaginar * b.real) + (this.real * b.imaginar);
 
-        return new Komplex(real, imaginar);
+        return new Komplex(realTemp, imaginarTemp);
     }
 
     public double arg() {
