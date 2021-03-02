@@ -20,8 +20,6 @@ public class KomplexTest {
             System.out.println("add funkar!!");
         }
 
-        a = new Komplex(3.0, 2.0);
-
         c = a.multiply(b);
         d = new Komplex(10,11);
 
@@ -30,8 +28,6 @@ public class KomplexTest {
         if (c.equals(d)) {
             System.out.println("multiply funkar!!");
         }
-
-        a = new Komplex(3.0,2.0);
 
         System.out.println("Argumentet till 3+2i är " + a.arg());
         if (a.arg() == Math.atan(2.0/3)) {
