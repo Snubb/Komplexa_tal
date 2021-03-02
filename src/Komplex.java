@@ -9,16 +9,28 @@ public class Komplex {
         this.imaginar = imaginar;
     }
 
-    @Override
-    public String toString() {
-        return real + " + " + imaginar + "i";
-    }
-
     public Komplex add(Komplex b) {
         double realTemp = this.real + b.real;
         double imaginarTemp = this.imaginar + b.imaginar;
 
         return new Komplex(realTemp, imaginarTemp);
+    }
+
+    public Komplex multiply(Komplex b) {
+        double realTemp = (this.real * b.real) - (this.imaginar * b.imaginar);
+        double imaginarTemp = (this.imaginar * b.real) + (this.real * b.imaginar);
+
+        return new Komplex(realTemp, imaginarTemp);
+    }
+
+    public double arg() {
+
+        return Math.atan(this.imaginar/this.real);
+    }
+
+    @Override
+    public String toString() {
+        return real + " + " + imaginar + "i";
     }
 
     @Override
@@ -33,17 +45,5 @@ public class Komplex {
     @Override
     public int hashCode() {
         return Objects.hash(real, imaginar);
-    }
-
-    public Komplex multiply(Komplex b) {
-        double realTemp = (this.real * b.real) - (this.imaginar * b.imaginar);
-        double imaginarTemp = (this.imaginar * b.real) + (this.real * b.imaginar);
-
-        return new Komplex(realTemp, imaginarTemp);
-    }
-
-    public double arg() {
-
-        return Math.atan(this.imaginar/this.real);
     }
 }
