@@ -4,7 +4,7 @@ public class Komplex {
     public double real;
     public double imaginar;
 
-    public Komplex(double real, double imaginar) {
+    public Komplex(double real, double imaginar) { //komplex tal som skrivs med formeln: a + bi
         this.real = real;
         this.imaginar = imaginar;
     }
